@@ -21,13 +21,13 @@ echo ----------------------------------------------------------
 echo
 
 ### Flash the Spider v2.2 via USB...
-echo "Start processing for the Octopus..."
+echo "Start processing for the Spider v2.2..."
 make clean KCONFIG_CONFIG=config.spider22
 make menuconfig KCONFIG_CONFIG=config.spider22
 make -j4 KCONFIG_CONFIG=config.spider22
 make flash KCONFIG_CONFIG=config.spider22 FLASH_DEVICE=/dev/serial/by-id/usb-Klipper_stm32f446xx_440025001450325635393320-if00
 
-# Sometimes the Octopus is stuck in DFU mode...
+# Sometimes the Spider22 is stuck in DFU mode...
 if [ $? -eq 0 ]; then
    echo "*** Successfully flashed Spider v2.2"
 else
